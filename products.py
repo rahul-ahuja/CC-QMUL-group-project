@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
 	return "<h1>Welcome to Cloud Merchandise!</h1>"
-
+#check out https://developer.bestbuy.com/
 
 @app.route('/records/<product>', methods=['GET']) 
 def get_records(product): 
