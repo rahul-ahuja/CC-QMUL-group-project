@@ -20,12 +20,11 @@ cur.execute('''CREATE TABLE stocks.users (id SERIAL PRIMARY KEY,
 	hash TEXT NOT NULL)''')
 
 #create sales table
-cur.execute('''CREATE TABLE sales (id SERIAL INTEGER PRIMARY KEY, 
+cur.execute('''CREATE TABLE stocks.sales (id SERIAL PRIMARY KEY, 
 	symbol TEXT NOT NULL, 
 	price FLOAT NOT NULL,  
 	user_name TEXT NOT NULL, 
-	share_name TEXT, 
-	PRIMARY KEY(id))''')
+	share_name TEXT)''')
 
 
 #cur.execute('''REVOKE SELECT, INSERT ON TABLE users FROM readwrite3''')
@@ -36,7 +35,9 @@ except:
 	print('Role already created')
 
 cur.execute('''GRANT CONNECT ON DATABASE stocks TO readwrite4''')
-cur.execute('''GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA stocks TO readwrite4''')
+#cur.execute('''GRANT INSERT ON SCHEMA stocks TO readwrite4''')
+cur.execute('''GRANT SELECT, INSERT, UPDATE ON TABLE stocks.users TO readwrite4''')
+cur.execute('''GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE stocks.sales TO readwrite4''')
 cur.execute('''GRANT USAGE ON ALL SEQUENCES IN SCHEMA stocks TO readwrite4''')
 
 
