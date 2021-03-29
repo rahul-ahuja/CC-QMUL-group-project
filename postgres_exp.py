@@ -7,7 +7,7 @@ cur = conn.cursor()
 conn.set_session(autocommit=True)
 
 
-#cur.execute('''DROP TABLE IF EXISTS users''')
-#cur.execute('''INSERT INTO stocks.users (username, hash) VALUES (%s, %s)''', ('exp', 'pswd'))
-cur.execute('''SELECT * FROM stocks.users''')
+cur.execute('''DROP TABLE IF EXISTS stocks.users''')
+
+cur.execute('''SELECT * FROM stocks.sales''')
 print(cur.fetchall())
