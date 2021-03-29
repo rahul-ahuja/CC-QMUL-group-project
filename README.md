@@ -1,6 +1,9 @@
 # CC-QMUL-group-project
 QMUL Cloud Computing group project
 
+![creativity](https://user-images.githubusercontent.com/21355015/112899126-9e1dfb00-90d9-11eb-93de-e678cd2fbdbf.jpg)
+
+
 
 Some of the curl commands to be used on windows terminal;
 
