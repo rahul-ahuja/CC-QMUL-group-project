@@ -1,5 +1,4 @@
-# CC-QMUL-group-project
-QMUL Cloud Computing group project
+# QMUL Cloud Computing group project
 
 
 For the project specifications;
