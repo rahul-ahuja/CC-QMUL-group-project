@@ -8,10 +8,10 @@ External REST service is IEX API. Here's the documentation https://iexcloud.io/d
   
 CRUD operations: Our applications can perform the following CRUD operations; The status codes have been assigned according to the responses conforming to REST standards.
 
-1. For GET method; 1. Welcome Page 2. Display of the stocks bought by the users
-2. For POST method; 1. Users can buy the stocks 2. Users can register their accounts along with password 3. Users can login 4. 
-3. For DELETE method; 1. Users can return the stocks that they bought
-4. For PUT method; 1. Users can change their login password
+1. For GET method; i. Welcome Page ii. Display of the stocks bought by the users
+2. For POST method; i. Users can buy the stocks ii. Users can register their accounts along with password iii. Users can login
+3. For DELETE method; i. Users can return the stocks that they bought
+4. For PUT method; i. Users can change their login password
 
 ### External Cloud database 
 Postgres database application has been setup on AWS instance using Docker image. The postgres docker container has been created by the below command;
