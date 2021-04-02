@@ -12,34 +12,29 @@ import psycopg2
 #initializing the app as Flask class
 app = Flask(__name__)
 
-#making connection to the postgres database with the role of the developer
-
+#connection to the postgres database with the role of the developer
 conn = psycopg2.connect('host=127.0.0.1 dbname=stocks user=developer4 password=dev_pswd')
 cur = conn.cursor()
 conn.set_session(autocommit=True)
 
-
-#sess dictionary will carry the temporal information about the user across the functions
+#dictionary will carry user's temporal information across functions
 sess = {}
 api_key = "pk_f99acd61740946c9b13696784a19452e" #API Key to IEX API
-# Here is the page to the documentation to IEX API https://iexcloud.io/docs/api/
 
-
+#just returns a welcome page
 @app.route('/')
 def hello():
 	return "<h1>Welcome to QMUL Stocks Trading!</h1>", 200
 
 
-@app.route('/stocks/<symbol>', methods=['GET']) 
+@app.route('/stocks/<symbol>', methods=['GET'])
+#Pass the symbol of the stock as an endpoint
 def get_records(symbol): 
-	'''
-	symbol: Pass the symbol of the stock as an endpoint
-	return: displays the stock's name, price and symbol 
-	'''
 	url = f"https://cloud-sse.iexapis.com/stable/stock/{urllib.parse.quote_plus(symbol)}/quote?token={api_key}"
 	response = requests.get(url)
 	response.raise_for_status()
 	quote = response.json()
+#displays the stock's name, price and symbol 
 	return {
 	"name": quote["companyName"],
     "price": float(quote["latestPrice"]),
@@ -48,10 +43,8 @@ def get_records(symbol):
 
 
 @app.route('/register', methods = ['POST'])
+#user to registers into the account
 def register():
-	'''
-	return: the function is for the user to register for the account
-	'''
 	new_user = {'name': request.json['name'], 'pswd': generate_password_hash(request.json['pswd'])}
 	cur.execute('''INSERT INTO stocks.users (username, hash) VALUES (%s, %s)''', (new_user['name'], new_user['pswd']))
 	return jsonify({'message': 'Account registered: {}'.format(request.json['name'])}), 200
@@ -111,9 +104,7 @@ def buy(symbol):
 
 @app.route("/records", methods=["GET"])
 def display_records():
-	'''
-	this function displays the records of stocks of the logged in user
-	'''
+#displays the records of stocks of the logged in user
 	try:
 		cur.execute('''SELECT * FROM stocks.sales WHERE user_name = (%s)''', (sess['name'], ))
 		return jsonify(cur.fetchall()), 200
