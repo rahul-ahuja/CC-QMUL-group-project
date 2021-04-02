@@ -31,7 +31,7 @@ Option 2 has been addressed.
 
 ![image](https://user-images.githubusercontent.com/21355015/113448602-0fb8ba80-93f4-11eb-93d4-d57919080f63.png)
 
-Some of the curl commands to be used on windows terminal;
+Some of the curl commands that can be used on windows terminal;
 
 curl -i -H "Content-Type:application/json" -X POST -d "{\"name\":\"danny\", \"pswd\":\"blah\"}" http://127.0.0.1:5000/register
 
