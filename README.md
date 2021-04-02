@@ -28,7 +28,7 @@ Option 2 has been addressed.
 2. Implementing hash-based authentication.
 3. Securing the database with role-based policies.
 
-
+![image](https://user-images.githubusercontent.com/21355015/113444079-155dd280-93eb-11eb-81b5-5531b427df38.png)
 
 Some of the curl commands to be used on windows terminal;
 
