@@ -1,6 +1,6 @@
 import psycopg2
 
-#making connection to the postgres database called stocks as an owner- Database Admin
+#connection to the postgres database stocks as an owner- Database Admin
 conn = psycopg2.connect('host=127.0.0.1 dbname=stocks user=dba password=dba_pswd')
 cur = conn.cursor()
 conn.set_session(autocommit=True)
@@ -20,7 +20,7 @@ cur.execute('''CREATE TABLE stocks.users (id SERIAL PRIMARY KEY,
 	username TEXT NOT NULL, 
 	hash TEXT NOT NULL)''')
 
-#create sales table
+#creating sales table
 cur.execute('''CREATE TABLE stocks.sales (id SERIAL PRIMARY KEY, 
 	symbol TEXT NOT NULL, 
 	price FLOAT NOT NULL,  
@@ -36,13 +36,12 @@ except:
 	print('Role already created')
 
 #granting the role with certain privileges
-
 cur.execute('''GRANT CONNECT ON DATABASE stocks TO readwrite4''')
 cur.execute('''GRANT SELECT, INSERT, UPDATE ON TABLE stocks.users TO readwrite4''')
 cur.execute('''GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE stocks.sales TO readwrite4''')
 cur.execute('''GRANT USAGE ON ALL SEQUENCES IN SCHEMA stocks TO readwrite4''')
 
-#assigning the role to the user called developer4 who will work on the main application
+#assigning role to user developer4 to work on the main application
 try:
 	cur.execute("CREATE USER developer4 WITH PASSWORD 'dev_pswd'")
 except:
