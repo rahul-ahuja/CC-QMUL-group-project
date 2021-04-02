@@ -1,7 +1,29 @@
 # CC-QMUL-group-project
 QMUL Cloud Computing group project
 
-![creativity](https://user-images.githubusercontent.com/21355015/112899126-9e1dfb00-90d9-11eb-93de-e678cd2fbdbf.jpg)
+
+For the project specifications;
+
+External REST service is IEX API. Here's the documentation https://iexcloud.io/docs/api/
+<snapshot of the quote price and symbol>
+  
+CRUD operations: Our applications can perform the following CRUD operations; The status codes have been assigned according to the responses conforming to REST standards.
+
+For GET method; 1. Welcome Page 2. Display of the stocks bought by the users
+For POST method; 1. Users can buy the stocks 2. Users can register their accounts along with password 3. Users can login 4. 
+For DELETE method; 1. Users can return the stocks that they bought
+For PUT method; 1. Users can change their login password
+
+### External Cloud database 
+Postgres database application has been setup on AWS instance using Docker image. The postgres docker container has been created by the below command;
+
+`docker run --name qmul_cloud -p 5432:5432 -e POSTGRES_DB=stocks -e POSTGRES_USER=dba -e POSTGRES_PASSWORD=dba_pswd -d postgres` 
+ 
+Option 2 has been addressed. 
+
+1. Implementing user accounts and access management.
+2. Implementing hash-based authentication.
+3. Securing the database with role-based policies.
 
 
 
