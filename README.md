@@ -15,17 +15,23 @@ CRUD operations: Our applications can perform the following CRUD operations; The
 1. For GET method;
  
 i. Welcome Page implemented with function of hello()
+
 ii. Display of the stocks bought by the users implemented with function of get_records(symbol)
 
 2. For POST method; 
+
 i. Users can buy the stocks implemented with function of buy(symbol)
+
 ii. Users can register their accounts along with password implemented with function of register()   
+
 iii. Users can login implemented with function of login()
 
 3. For DELETE method; 
+
 i. Users can return the stocks that they bought implemented with function of return_stocks(r_id)
 
 4. For PUT method; 
+
 i. Users can change their login password implemented with function of reset_password()
 
 ### External Cloud database 
