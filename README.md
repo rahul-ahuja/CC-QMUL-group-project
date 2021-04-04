@@ -7,7 +7,20 @@ Description of the Application: This API can enable users to buy the stocks. We 
 For the project specifications;
 
 External REST service is IEX API. Here's the documentation https://iexcloud.io/docs/api/
-<snapshot of the quote price and symbol>
+The endpoint to the External REST service is as follows;
+<IPADDRESS>:5000/stocks/<company symbol>
+
+Here's the Netflix stocks details collected from external rest API;
+
+![image](https://user-images.githubusercontent.com/21355015/113519143-563c1f80-9582-11eb-991c-aca36a2f83f0.png)
+
+
+Here's the Facebook stocks details collected from external rest API;
+![image](https://user-images.githubusercontent.com/21355015/113519159-6f44d080-9582-11eb-9778-e074818cb750.png)
+
+Here's the Amazon stocks details collected from external rest API;
+![image](https://user-images.githubusercontent.com/21355015/113519184-8be10880-9582-11eb-8484-2562f55509d0.png)
+
   
 CRUD operations: Our applications can perform the following CRUD operations; The status codes have been assigned according to the responses conforming to REST standards.
 
