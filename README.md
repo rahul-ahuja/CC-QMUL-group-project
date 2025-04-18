@@ -2,6 +2,10 @@
 
 git clone https://rahul-ahuja@github.com/rahul-ahuja/CC-QMUL-group-project
 
+### Video Demo
+https://drive.google.com/file/d/1genJKrDGx_dfyz8Hcf6h5asVc4hXrptt/view?usp=sharing
+
+
 Description of the Application: This API can enable users to buy the stocks. We used the external rest api to fetch the information of the stocks like (stock symbol, company name and stock price).
 
 For the project specifications;
